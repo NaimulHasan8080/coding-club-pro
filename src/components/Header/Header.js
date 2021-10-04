@@ -22,7 +22,7 @@ const Header = () => {
         <Container>
           <NavLink className="text-decoration-none sm-mb-3" to="home">
             <Navbar.Brand className="navBarBrand">
-              <img width="100px" src={logo} alt="" />{" "}
+              <img width="80px" src={logo} alt="" />{" "}
               <span className="fw-bold text-white">Coding Club Institute</span>
             </Navbar.Brand>
           </NavLink>

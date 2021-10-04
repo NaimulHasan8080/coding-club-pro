@@ -12,7 +12,7 @@ function Course(props) {
   const { img, title, desc, price, rating, ratingCount } = props.course;
 
   return (
-    <Col className="my-2" md={4}>
+    <Col className="my-3" md={4}>
       <Card style={{ minHeight: "480px" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>

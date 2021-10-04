@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "./../../images/sectionBg.png";
 import Bg from "./../../images/bg.png";
 import { Container, Button, Row } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -44,14 +45,22 @@ const Home = () => {
           </div>
         </Container>
       </div>
-      <Container className="my-5">
-        <h2 className="text-center mb-4">Featured Courses</h2>
-        <Row>
-          {featureCourses?.map((course) => (
-            <Course course={course} key={course.key}></Course>
-          ))}
-        </Row>
-      </Container>
+      <div
+        style={{ background: `url(${bgImage})`, backgroundAttachment: "fixed" }}
+      >
+        <Container className="py-5">
+          <h2 className="text-center text-white mb-2">Featured Courses</h2>
+          <p className="text-white text-center">
+            Hero you can find our all latest courses. Choose some of them and
+            try to grow up your skills.
+          </p>
+          <Row>
+            {featureCourses?.map((course) => (
+              <Course course={course} key={course.key}></Course>
+            ))}
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 };
