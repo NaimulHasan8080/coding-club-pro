@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
+import FooterBG from "./../../images/footer-bg.png";
 
 library.add(faEnvelope, faMapMarkerAlt, faPhone);
 const Footer = () => {
@@ -22,7 +23,13 @@ const Footer = () => {
     display: "inline-block",
   };
   return (
-    <div style={{ background: "#007aff", padding: "40px 0 0" }}>
+    <div
+      style={{
+        background: `url(${FooterBG})`,
+        backgroundRepeat: "repeat",
+        padding: "40px 0 0",
+      }}
+    >
       <Container>
         <Row>
           <Col>
@@ -81,11 +88,8 @@ const Footer = () => {
         </Row>
       </Container>
       <hr className="mt-5 mb-2 bg-white" />
-      <p
-        style={{ background: "#007aff" }}
-        className="m-0 py-2 pb-3 text-white text-center"
-      >
-        Copyright &copy; All Reserved
+      <p className="m-0 py-2 pb-3 text-white text-center">
+        Copyright &copy; All Reserved by Coding Club, 2021
       </p>
     </div>
   );

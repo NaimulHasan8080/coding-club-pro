@@ -1,12 +1,13 @@
 import "./header.css";
 import logo from "./../../logo.png";
+import HeaderBg from "./../../images/header-bg.png";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const active = {
-    color: "orange",
+    color: "#ff136f",
   };
   const navStyle = {
     textDecoration: "none",
@@ -17,8 +18,11 @@ const Header = () => {
     textTransform: "Uppercase",
   };
   return (
-    <div>
-      <Navbar style={{ background: "#007aff" }} expand="lg">
+    <div className="sticky-top">
+      <Navbar
+        style={{ background: `url(${HeaderBg})`, backgroundRepeat: "repeat" }}
+        expand="lg"
+      >
         <Container>
           <NavLink className="text-decoration-none sm-mb-3" to="home">
             <Navbar.Brand className="navBarBrand">
