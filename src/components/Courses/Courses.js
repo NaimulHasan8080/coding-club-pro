@@ -12,7 +12,7 @@ const Courses = () => {
     >
       <Container className="py-5">
         <h2 className="text-center text-white mb-0">Our All Courses</h2>
-        <p className="my-4 mt-2 text-center text-white fs-5">
+        <p className="my-4 mt-2 text-center text-muted fs-5">
           Learn exciting technologies from web development, design, game
           development and more!
         </p>

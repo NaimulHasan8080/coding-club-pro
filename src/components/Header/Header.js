@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const active = {
     color: "#ff136f",
+    borderBottom: "2px solid #ff136f",
   };
   const navStyle = {
     textDecoration: "none",
@@ -24,7 +25,10 @@ const Header = () => {
         expand="lg"
       >
         <Container>
-          <NavLink className="text-decoration-none sm-mb-3" to="home">
+          <NavLink
+            className="hoverStyle text-decoration-none sm-mb-3"
+            to="home"
+          >
             <Navbar.Brand className="navBarBrand">
               <img width="80px" src={logo} alt="" />{" "}
               <span className="fw-bold text-white">Coding Club Institute</span>
@@ -33,16 +37,36 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <NavLink style={navStyle} activeStyle={active} to="/home">
+              <NavLink
+                className="hoverStyle"
+                style={navStyle}
+                activeStyle={active}
+                to="/home"
+              >
                 Home
               </NavLink>
-              <NavLink style={navStyle} activeStyle={active} to="/about">
+              <NavLink
+                className="hoverStyle"
+                style={navStyle}
+                activeStyle={active}
+                to="/about"
+              >
                 About
               </NavLink>
-              <NavLink style={navStyle} activeStyle={active} to="/courses">
+              <NavLink
+                className="hoverStyle"
+                style={navStyle}
+                activeStyle={active}
+                to="/courses"
+              >
                 Courses
               </NavLink>
-              <NavLink style={navStyle} activeStyle={active} to="/contact">
+              <NavLink
+                className="hoverStyle"
+                style={navStyle}
+                activeStyle={active}
+                to="/contact"
+              >
                 Contact
               </NavLink>
             </Nav>

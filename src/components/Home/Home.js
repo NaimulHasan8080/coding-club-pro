@@ -50,8 +50,8 @@ const Home = () => {
       >
         <Container className="py-5">
           <h2 className="text-center text-white mb-2">Featured Courses</h2>
-          <p className="text-white text-center">
-            Hero you can find our all latest courses. Choose some of them and
+          <p className="text-muted text-center">
+            Here you can find our all latest courses. Choose some of them and
             try to grow up your skills.
           </p>
           <Row>

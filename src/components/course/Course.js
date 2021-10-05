@@ -17,7 +17,7 @@ function Course(props) {
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
-          <Card.Text>{desc}</Card.Text>
+          <Card.Text className="text-muted">{desc}</Card.Text>
           <p>
             {" "}
             <b>Price: {price}$</b>
