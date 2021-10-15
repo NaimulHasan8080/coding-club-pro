@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import footerLogo from "./../../images/footer-logo.png";
-import Payment from "./../../images/payment.png";
+import footerLogo from "./../../assets/images/footer-logo.png";
+import Payment from "./../../assets/images/payment.png";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import "./footer.css";
 import {
@@ -16,7 +16,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
-import FooterBG from "./../../images/footer-bg.png";
+import FooterBG from "./../../assets/images/footer-bg.png";
 
 library.add(
   faEnvelope,

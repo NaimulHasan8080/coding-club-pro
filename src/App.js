@@ -8,38 +8,60 @@ import About from "./components/About/About.js";
 import Courses from "./components/Courses/Courses.js";
 import Contact from "./components/Contact/Contact.js";
 import NotFound from "./components/NotFound/NotFound.js";
+import Login from "./components/login/Login.js";
+import SignUp from "./components/signup/Signup.js";
+import AuthProvider from "./contexts/AuthProvider.js";
+import PrivateRoute from "./components/privateRoute/PrivateRoute.js";
+import Cart from "./components/cart/Cart.js";
+import CourseDetails from "./components/courseDetails/CourseDetails.js";
 function App() {
   return (
     <div>
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
 
-          <Route path="/home">
-            <Home></Home>
-          </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
 
-          <Route path="/about">
-            <About></About>
-          </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
 
-          <Route path="/courses">
-            <Courses></Courses>
-          </Route>
+            <Route exact path="/courses">
+              <Courses></Courses>
+            </Route>
 
-          <Route path="/contact">
-            <Contact></Contact>
-          </Route>
+            <Route path="/courses/:id">
+              <CourseDetails></CourseDetails>
+            </Route>
 
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <PrivateRoute path="/cart">
+              <Cart></Cart>
+            </PrivateRoute>
+            <Route path="/signup">
+              <SignUp></SignUp>
+            </Route>
+
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }

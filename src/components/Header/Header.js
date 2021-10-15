@@ -1,11 +1,16 @@
 import "./header.css";
 import logo from "./../../logo.png";
-import HeaderBg from "./../../images/header-bg.png";
+import HeaderBg from "./../../assets/images/header-bg.png";
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Badge, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../hooks/useAuth.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const { contexts, selectedCourse } = useAuth();
+  const { user, logOut } = contexts;
   const active = {
     color: "#ff136f",
     borderBottom: "2px solid #ff136f",
@@ -36,7 +41,7 @@ const Header = () => {
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto align-items-center">
               <NavLink
                 className="hoverStyle"
                 style={navStyle}
@@ -69,6 +74,56 @@ const Header = () => {
               >
                 Contact
               </NavLink>
+              <div>
+                <NavLink to="/cart" className="btn text-white">
+                  <FontAwesomeIcon icon={faShoppingCart} />
+                  <Badge bg="">{selectedCourse.length}</Badge>
+                </NavLink>
+              </div>
+              {user.displayName ? (
+                <div>
+                  <NavDropdown
+                    title={
+                      <>
+                        <img
+                          style={{ width: "45px", borderRadius: "50%" }}
+                          src={user.photoURL}
+                          alt="profile"
+                        />
+                      </>
+                    }
+                  >
+                    <div className="text-center">
+                      <p>{user.displayName}</p>
+                      <p>{user.email}</p>
+                      <div className="text-center">
+                        <button onClick={logOut} className="btn btn-primary">
+                          Log Out
+                        </button>
+                      </div>
+                    </div>
+                  </NavDropdown>
+                </div>
+              ) : (
+                <>
+                  <NavLink
+                    className="hoverStyle"
+                    style={navStyle}
+                    activeStyle={active}
+                    to="/login"
+                  >
+                    Login
+                  </NavLink>
+                  <NavLink
+                    className="hoverStyle"
+                    style={navStyle}
+                    activeStyle={active}
+                    to="/signup"
+                  >
+                    Sign up
+                  </NavLink>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
